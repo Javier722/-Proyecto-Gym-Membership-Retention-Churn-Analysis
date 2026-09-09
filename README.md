@@ -103,9 +103,11 @@ ORDER BY churn_rate_percent DESC;
 
 
 
-## 📊  Visualization & Executive Dashboard (Power BI)
+---
 
-The **Retention & Churn Dashboard** was designed and implemented in Power BI. The layout is structured to provide clear, high-level executive insights followed by interactive drill-down analytical capabilities.
+## 📊 Visualization & Executive Dashboard (Power BI)
+
+In this phase, the **Retention & Churn Dashboard** was designed and implemented in Power BI. The layout is structured to provide clear, high-level executive insights followed by interactive drill-down analytical capabilities.
 
 ### 🖼️ Dashboard Preview
 
