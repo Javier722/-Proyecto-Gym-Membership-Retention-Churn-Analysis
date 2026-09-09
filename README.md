@@ -152,4 +152,3 @@ Based on the quantitative findings across retention, risk segmentation, member e
 ### 3. Operational Efficiency & Support SLA (Query 4)
 * **Priority Escalation for Repeated Support Tickets:** Flag accounts reaching **2 or more support interactions** for immediate escalation to customer success. Resolution times over **5 days** directly drive cancellations—streamlining billing and app access workflows will mitigate up to 40% of preventable churn.
 
-
