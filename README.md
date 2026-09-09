@@ -114,7 +114,7 @@ In this phase, the **Retention & Churn Dashboard** was designed and implemented 
 ![Retention & Churn Dashboard](assets/dashboard_v2.png)
 
 > 💡 **Want to interact with the report?** 
-> You can download the [gym_churn_analysis.pbix](./gym_churn_analysis.pbix) file or explore the live report on [Power BI Service](https://app.powerbi.com/). *(Replace this link with your public Power BI report URL if published)*.
+> You can download the [Gym_Membership_Retention_&_Churn_Executive_Dashboard.pbix](./Gym_Membership_Retention_&_Churn_Executive_Dashboard.pbix) file or explore the live report on [Power BI Service](https://app.powerbi.com/).
 
 ---
 
