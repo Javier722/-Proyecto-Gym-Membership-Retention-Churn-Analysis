@@ -1,0 +1,5 @@
+# Editor settings
+.vscode/
+
+# Raw data files (se generan con el script generate_data.py)
+*.csv
