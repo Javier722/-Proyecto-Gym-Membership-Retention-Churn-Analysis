@@ -111,7 +111,7 @@ In this phase, the **Retention & Churn Dashboard** was designed and implemented 
 
 ### 🖼️ Dashboard Preview
 
-![Retention & Churn Dashboard](assets/dashboard_v2.png)
+![Retention & Churn Dashboard](assets/dashboard.gif)
 
 > 💡 **Want to interact with the report?** 
 > You can download the file and explore the report [Gym_Membership_Retention_&_Churn_Executive_Dashboard.pbix](./Gym_Membership_Retention_&_Churn_Executive_Dashboard.pbix).
