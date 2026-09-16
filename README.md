@@ -114,7 +114,7 @@ In this phase, the **Retention & Churn Dashboard** was designed and implemented 
 ![Retention & Churn Dashboard](assets/dashboard_v2.png)
 
 > 💡 **Want to interact with the report?** 
-> You can download the [Gym_Membership_Retention_&_Churn_Executive_Dashboard.pbix](./Gym_Membership_Retention_&_Churn_Executive_Dashboard.pbix) file or explore the live report on [Power BI Service](https://app.powerbi.com/).
+> You can download the file and explore the report [Gym_Membership_Retention_&_Churn_Executive_Dashboard.pbix](./Gym_Membership_Retention_&_Churn_Executive_Dashboard.pbix).
 
 ---
 
@@ -138,6 +138,40 @@ In this phase, the **Retention & Churn Dashboard** was designed and implemented 
 | **Risk Segmentation** | Donut Chart | Classification of active members by churn risk level. |
 | **Member Drill-Down** | Interactive Table | Granular member-level exploration with cross-filtering capabilities. |
 
+
+---
+
+
+### 🧠 Technical Challenges Solved
+
+#### 1. Managing Multiple Date Relationships (`USERELATIONSHIP`)
+* **Problem:** The `'members'` table contains multiple date fields (`join_date` and `churn_date`). Power BI only allows one active relationship between the `'Calendar'` dimension and the fact table at a time, which defaults calculations to the join date.
+* **Solution:** Used an active relationship between `'Calendar'[Date]` and `'members'[join_date]` for primary analysis, and an inactive relationship for `'members'[churn_date]`. Implemented DAX with `USERELATIONSHIP()` to dynamically activate the churn timeline without breaking the primary data model structure.
+
+```dax
+// Standard Churned Members count (Uses default active relationship)
+Churned Members = 
+CALCULATE(
+    COUNTROWS('members'), 
+    'members'[status] = "Churned"
+)
+
+// Churned Members count dynamically driven by the Churn Date timeline
+Churned Members (by Churn Date) = 
+CALCULATE(
+    COUNTROWS('members'),
+    USERELATIONSHIP('members'[churn_date], 'Calendar'[Date]),
+    'members'[status] = "Churned"
+)
+
+```
+
+#### 2 . Star Schema & Calendar Dimension Setup
+* **Problem:** Standard automatic date hierarchies consume extra memory and restrict flexible Time Intelligence calculations across custom period filters.
+
+* **Solution:** Modeled a dedicated 'Calendar' dimension table linked to the core 'members' table, enabling robust time-series slicers and accurate Month-over-Month churn tracking.
+
+---  
 
 
 ## 💡 Strategic Recommendations
